@@ -1,0 +1,16 @@
+// Перевод числа из двоичной в десятичную форму
+static BigInteger toBinary (String S) {
+       
+       BigInteger b = new BigInteger(S);
+       BigInteger  k ,two = new BigInteger("2");
+       BigInteger sum = BigInteger.ZERO;
+       int i = 0;
+       while(b.compareTo(BigInteger.ZERO)==1) {
+           k=b.mod(BigInteger.TEN);
+           sum=sum.add( (k.multiply(two.pow(i))));
+           i++;
+           b=b.divide(BigInteger.TEN);
+       }
+               
+       return sum;
+   }
